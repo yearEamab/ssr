@@ -117,6 +117,29 @@ printf "`cat -n /root/shadowsocksr/user-config.json`"
 printf "\n"
 }
 
+#启动ssr
+function logrun(){
+`chmod +x ./shadowsocksr/shadowsocks/logrun.sh`
+. ./shadowsocksr/shadowsocks/logrun.sh
+}
+
+#停止ssr
+function stopssr(){
+`chmod +x ./shadowsocksr/shadowsocks/logrun.sh`
+. ./shadowsocksr/shadowsocks/stop.sh
+}
+
+#查看日志
+function showTail(){
+`chmod +x ./shadowsocksr/shadowsocks/tail.sh`
+. ./shadowsocksr/shadowsocks/tail.sh
+}
+
+`apt-get install vim git -y`
+`git clone -b manyuser https://github.com/ToyoDAdoubi/shadowsocksr.git`
+bash ./shadowsocksr/initcfg.sh
+while :
+do
 isPortPassword=$(grep -c "\"port_password\"" /root/shadowsocksr/user-config.json)
 if [ $isPortPassword -eq 0 ]
 then
@@ -131,27 +154,51 @@ echo "4:加密方法"
 echo "5:修改协议"
 echo "6:修改混淆"
 echo "7:查看配置"
+echo "8:运行ssr"
+echo "9:停止ssr"
+echo "q:退出"
+echo "t:查看日志"
 echo "======================================"
 read choose
 case $choose in
 1)addUser
 rmComma
 showUser
+continue
 ;;
 2)deleteUser
 rmComma
 showUser
+continue
 ;;
 3)showUser
+continue
 ;;
 4)encryptMethod
+continue
 ;;
 5)protocol
+continue
 ;;
 6)obfs
+continue
 ;;
 7)showConfig
+continue
+;;
+8)logrun
+continue
+;;
+9)stopssr
+continue
+;;
+q)break
+;;
+t)showTail
+continue
 ;;
 *)echo "welcome came"
+continue
 ;;
 esac
+done
