@@ -135,9 +135,9 @@ function showTail(){
 . ./shadowsocksr/shadowsocks/tail.sh
 }
 
-`apt-get install vim git -y`
-`git clone -b manyuser https://github.com/ToyoDAdoubi/shadowsocksr.git`
-bash ./shadowsocksr/initcfg.sh
+#`apt-get install vim git -y`
+#`git clone -b manyuser https://github.com/ToyoDAdoubi/shadowsocksr.git`
+#bash ./shadowsocksr/initcfg.sh
 while :
 do
 isPortPassword=$(grep -c "\"port_password\"" /root/shadowsocksr/user-config.json)
