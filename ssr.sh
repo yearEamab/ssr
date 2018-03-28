@@ -119,20 +119,20 @@ printf "\n"
 
 #启动ssr
 function logrun(){
-`chmod +x ./shadowsocksr/shadowsocks/logrun.sh`
-. ./shadowsocksr/shadowsocks/logrun.sh
+`chmod +x /root/shadowsocksr/shadowsocks/logrun.sh`
+. /root/shadowsocksr/shadowsocks/logrun.sh
 }
 
 #停止ssr
 function stopssr(){
-`chmod +x ./shadowsocksr/shadowsocks/logrun.sh`
-. ./shadowsocksr/shadowsocks/stop.sh
+`chmod +x /root/shadowsocksr/shadowsocks/logrun.sh`
+. /root/shadowsocksr/shadowsocks/stop.sh
 }
 
 #查看日志
 function showTail(){
-`chmod +x ./shadowsocksr/shadowsocks/tail.sh`
-. ./shadowsocksr/shadowsocks/tail.sh
+`chmod +x /root/shadowsocksr/shadowsocks/tail.sh`
+. /root/shadowsocksr/shadowsocks/tail.sh
 }
 
 #`apt-get install vim git -y`
